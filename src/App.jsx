@@ -1,21 +1,24 @@
-import "./App.css"
-import MovieCard from "./components/MovieCard";
+import "./css/App.css"
 import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Favorites from "./pages/Favorites";
+import Navbar from "./components/Navbar";
 
+function App() {
 
-
-function App(){
-  const movieNumber = 1;
-  return(
-    <>
-    <Home />
-    </>
+  return (
+      <>
+        <div>
+          <Navbar />
+        </div>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+        </main>
+      </>
   )
 }
-
-//Movie Card
-//Navbar
-//Favorites
-//Search
 
 export default App;
